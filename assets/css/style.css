@@ -1,0 +1,109 @@
+@import url('./global.css');
+
+body {
+    display: grid;
+    grid: "header header header header header" .1fr
+    "sidebar . . . ." 1fr
+    "sidebar . . . ." 1fr
+    "sidebar . . . ." 1fr
+    / .5fr 1fr 1fr 1fr 1fr;
+    height: 100vh;
+    background-color: #F9F9F9;
+}
+
+header {
+    grid-area: header;
+    background-color: white;
+}
+
+header > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+header > ul > li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+header > ul > .menu-logo > .menu-icon {
+    margin-right: 1rem;
+}
+
+header > ul > .search > input {
+    border: 1px solid #CCCCCC;
+    width: 18rem;
+    height: 1.8rem;
+}
+
+header > ul > .search > .search-icon {
+    border: 1px solid #CCC;
+    width: 2rem;
+    height: 1.8rem;
+    background-color: #F8F8F8;
+}
+
+header > ul > .search > .search-icon > img {
+    width: 1rem;
+    margin: 0.4rem 0.4rem;
+}
+
+header > ul > .avatar-area > .bell-icon {
+    margin-left: 1.3rem;
+}
+
+header > ul > .avatar-area > .avatar {
+    margin-left: 1.3rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+}
+
+.side {
+    background-color: white;
+    grid-area: sidebar;
+}
+
+.side > ul > li {
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 1.3rem 1rem 0rem 1.5rem;
+}
+
+.side > ul > li > img {
+    margin-right: 1rem;
+}
+
+.content {
+    margin-top: 1.3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.content > .channel-title {
+    margin-top: .8rem;
+    display: flex;
+}
+
+.content > .channel-title > img {
+    width: 3rem;
+    height: 3rem;
+    margin-right: .85rem;
+}
+
+.content > .channel-title > .text > h1 {
+    font-size: 1rem;
+    margin-bottom: .7rem;
+}
+
+.content > .channel-title > .text > p {
+    font-size: .8rem;
+    color: #515151;
+}
