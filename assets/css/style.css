@@ -1,109 +1,145 @@
 @import url('./global.css');
 
 body {
-    display: grid;
-    grid: "header header header header header" .1fr
-    "sidebar . . . ." 1fr
-    "sidebar . . . ." 1fr
-    "sidebar . . . ." 1fr
-    / .5fr 1fr 1fr 1fr 1fr;
-    height: 100vh;
-    background-color: #F9F9F9;
+  width: 1440px;
+  margin: auto;
+  background-color: #F9F9F9;
+
+  display: grid;
+
+  grid-template: 56px 968px / 218px 1222px;
+
+  grid-template-areas: "top-nav top-nav"
+                        "side-nav content";
 }
 
-header {
-    grid-area: header;
-    background-color: white;
+.top_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-area: top-nav;
+  padding: 0 24px 0;
+  background-color: #fff;
 }
 
-header > ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
+.icon-logo {
+  display: flex;
+  justify-content: space-between;
+  width: 146px;
+  height: 24px;
 }
 
-header > ul > li {
-    list-style: none;
-    display: flex;
-    align-items: center;
+.search {
+  display: flex;
+  width: 404px;
+  height: 40px;
 }
 
-header > ul > .menu-logo > .menu-icon {
-    margin-right: 1rem;
+.search > input {
+  width: 348px;
+  height: 40px;
+  border: 1px solid #ccc;
 }
 
-header > ul > .search > input {
-    border: 1px solid #CCCCCC;
-    width: 18rem;
-    height: 1.8rem;
+.icon-search {
+  background-color: #F8F8F8;
+  width: 57px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-left: none;
 }
 
-header > ul > .search > .search-icon {
-    border: 1px solid #CCC;
-    width: 2rem;
-    height: 1.8rem;
-    background-color: #F8F8F8;
+.icon-search > svg {
+  margin-top: 8px;
 }
 
-header > ul > .search > .search-icon > img {
-    width: 1rem;
-    margin: 0.4rem 0.4rem;
+.icon-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 130px;
+  height: 34px;
 }
 
-header > ul > .avatar-area > .bell-icon {
-    margin-left: 1.3rem;
+.icon-user > img {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-header > ul > .avatar-area > .avatar {
-    margin-left: 1.3rem;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 1rem;
+.side_menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  grid-area: side-nav;
+  background-color: #fff;
+  gap: 22px;
 }
 
-.side {
-    background-color: white;
-    grid-area: sidebar;
+.side_menu .menu-itens {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-left: 24px;
 }
 
-.side > ul > li {
-    list-style: none;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding: 1.3rem 1rem 0rem 1.5rem;
+.side_menu .menu-itens p {
+  font-size: 14px;
 }
 
-.side > ul > li > img {
-    margin-right: 1rem;
+.side_menu .inicio {
+  margin-top: 24px;
 }
 
-.content {
-    margin-top: 1.3rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    display: flex;
-    flex-direction: column;
+.side_menu .inicio p {
+  font-weight: 700;
 }
 
-.content > .channel-title {
-    margin-top: .8rem;
-    display: flex;
+main {
+  grid-area: content;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+  padding: 24px 24px 250px 28px;
+  gap: 14px;
+  justify-items: center;
+  align-items: center;
 }
 
-.content > .channel-title > img {
-    width: 3rem;
-    height: 3rem;
-    margin-right: .85rem;
+.video {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 250px;
+  max-height: 262px;
 }
 
-.content > .channel-title > .text > h1 {
-    font-size: 1rem;
-    margin-bottom: .7rem;
+.video-details {
+  width: 249px;
+  height: 74px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
 }
 
-.content > .channel-title > .text > p {
-    font-size: .8rem;
-    color: #515151;
+.titulo-visualizacao {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.titulo-visualizacao > h1 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.titulo-visualizacao > p {
+  width: 175px;
+  font-size: 12px;
+  font-weight: 400;
+  word-wrap: break-word;
 }
